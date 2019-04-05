@@ -39,5 +39,5 @@ urls = (
 
 if __name__ == "__main__":
     app = web.application(urls, globals())
-    web.config.debug = False
+    web.config.debug = True
     app.run()
