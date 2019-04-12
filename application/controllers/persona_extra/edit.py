@@ -50,7 +50,7 @@ class Edit:
         form['id_persona'] = config.check_secure_val(str(form['id_persona'])) # HMAC id_persona validate
         # edit user with new data
         result = config.model.edit_persona_extra(
-            form['id_persona'],form['nombre_persona'],form['ape_pat_persona'],form['ape_mat_persona'],form['edad'],form['fecha_extravio'],form['curp_persona'],form['sexo'],form['id_user'],
+            form['id_persona'],form['nombre_persona'],form['ape_pat_persona'],form['ape_mat_persona'],form['edad'],form['fecha_extravio'],form['curp_persona'],form['sexo'],form['email_user'],
         )
         if result == None: # Error on udpate data
             id_persona = config.check_secure_val(str(id_persona)) # validate HMAC id_persona

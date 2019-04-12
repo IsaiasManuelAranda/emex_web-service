@@ -21,23 +21,10 @@ if ssl == True:
 
 urls = (
     '/', 'application.controllers.main.index.Index',
-
-    '/persona_extra', 'application.controllers.persona_extra.index.Index',
-    '/persona_extra/view/(.+)', 'application.controllers.persona_extra.view.View',
-    '/persona_extra/edit/(.+)', 'application.controllers.persona_extra.edit.Edit',
-    '/persona_extra/delete/(.+)', 'application.controllers.persona_extra.delete.Delete',
-    '/persona_extra/insert', 'application.controllers.persona_extra.insert.Insert',
-
-    '/usuario', 'application.controllers.usuario.index.Index',
-    '/usuario/view/(.+)', 'application.controllers.usuario.view.View',
-    '/usuario/edit/(.+)', 'application.controllers.usuario.edit.Edit',
-    '/usuario/delete/(.+)', 'application.controllers.usuario.delete.Delete',
-    '/usuario/insert', 'application.controllers.usuario.insert.Insert',
-    
     #'/api_table_name/?', 'application.api.table_name.api_table_name.Api_table_name',
 )
 
 if __name__ == "__main__":
     app = web.application(urls, globals())
-    web.config.debug = True
+    web.config.debug = False
     app.run()

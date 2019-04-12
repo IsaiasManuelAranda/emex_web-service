@@ -1,10 +1,9 @@
 import web
 
-db_host = 'thzz882efnak0xod.cbetxkdyhwsb.us-east-1.rds.amazonaws.com'
-db_name = 'c2buiuqoxcowv0sz'
-db_user = 'zao0bi9cjgnbn459'
-db_pw = 'lzfkwhzjrmvrovi1'
-port = '3306'
+db_host = 'localhost'
+db_name = ''
+db_user = ''
+db_pw = ''
 
 db = web.database(
     dbn='mysql',

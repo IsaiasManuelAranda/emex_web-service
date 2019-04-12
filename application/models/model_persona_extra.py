@@ -31,23 +31,23 @@ def delete_persona_extra(id_persona):
         return None
 
 
-def insert_persona_extra(nombre_persona,ape_pat_persona,ape_mat_persona,edad,fecha_extravio,curp_persona,sexo,id_user):
+def insert_persona_extra(nombre_persona,ape_pat_persona,ape_mat_persona,edad,fecha_extravio,curp_persona,sexo,email_user):
     try:
         return db.insert('persona_extra',nombre_persona=nombre_persona,
-            ape_pat_persona=ape_pat_persona,
-            ape_mat_persona=ape_mat_persona,
-            edad=edad,
-            fecha_extravio=fecha_extravio,
-            curp_persona=curp_persona,
-            sexo=sexo,
-            id_user=id_user)
+ape_pat_persona=ape_pat_persona,
+ape_mat_persona=ape_mat_persona,
+edad=edad,
+fecha_extravio=fecha_extravio,
+curp_persona=curp_persona,
+sexo=sexo,
+email_user=email_user)
     except Exception as e:
         print "Model insert Error {}".format(e.args)
         print "Model insert Message {}".format(e.message)
         return None
 
 
-def edit_persona_extra(id_persona,nombre_persona,ape_pat_persona,ape_mat_persona,edad,fecha_extravio,curp_persona,sexo,id_user):
+def edit_persona_extra(id_persona,nombre_persona,ape_pat_persona,ape_mat_persona,edad,fecha_extravio,curp_persona,sexo,email_user):
     try:
         return db.update('persona_extra',id_persona=id_persona,
 nombre_persona=nombre_persona,
@@ -57,7 +57,7 @@ edad=edad,
 fecha_extravio=fecha_extravio,
 curp_persona=curp_persona,
 sexo=sexo,
-id_user=id_user,
+email_user=email_user,
                   where='id_persona=$id_persona',
                   vars=locals())
     except Exception as e:

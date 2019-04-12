@@ -45,6 +45,6 @@ class Insert:
 
         # call model insert_persona_extra and try to insert new data
         config.model.insert_persona_extra(
-            form['nombre_persona'],form['ape_pat_persona'],form['ape_mat_persona'],form['edad'],form['fecha_extravio'],form['curp_persona'],form['sexo'],form['id_user'],
+            form['nombre_persona'],form['ape_pat_persona'],form['ape_mat_persona'],form['edad'],form['fecha_extravio'],form['curp_persona'],form['sexo'],form['email_user'],
         )
         raise config.web.seeother('/persona_extra') # render persona_extra index.html
