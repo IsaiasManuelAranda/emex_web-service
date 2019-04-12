@@ -6,7 +6,7 @@ import json
 class Api_persona_extra:
     def get(self, id_persona):
         try:
-            # http://0.0.0.0:8080/api_persona_extra?user_hash=12345&action=get
+            # http://192.168.0.28:8080/api_persona_extra?user_hash=12345&action=get
             if id_persona is None:
                 result = config.model.get_all_persona_extra()
                 persona_extra_json = []
@@ -28,7 +28,7 @@ class Api_persona_extra:
             web.header('Content-Type', 'application/json')
             return json.dumps(persona_extra_json)
 
-# http://0.0.0.0:8080/api_persona_extra?user_hash=12345&action=put&id_persona=1&product=nuevo&description=nueva&stock=10&purchase_price=1&price_sale=3&product_image=0
+# http://192.168.0.28:8080/api_persona_extra?user_hash=12345&action=put&nombre_persona=nombre&ape_pat_persona=apepat&ape_mat_persona=apemat&edad=edad&fecha_extravio=fecha&curp_persona=curp&sexo=sexo&email_user=email
     def put(self, nombre_persona,ape_pat_persona,ape_mat_persona,edad,fecha_extravio,curp_persona,sexo,email_user):
         try:
             config.model.insert_persona_extra(nombre_persona,ape_pat_persona,ape_mat_persona,edad,fecha_extravio,curp_persona,sexo,email_user)
@@ -80,15 +80,24 @@ class Api_persona_extra:
         try:
             user_hash = user_data.user_hash  # user validation
             action = user_data.action  # action GET, PUT, DELETE, UPDATE
-            id_persona=user_data.id_persona
-            nombre_persona=user_data.nombre_persona
-            ape_pat_persona=user_data.ape_pat_persona
-            ape_mat_persona=user_data.ape_mat_persona
-            edad=user_data.edad
-            fecha_extravio=user_data.fecha_extravio
-            curp_persona=user_data.curp_persona
-            sexo=user_data.sexo
-            email_user=user_data.email_user
+            id_persona=user_data.id_persona
+
+            nombre_persona=user_data.nombre_persona
+
+            ape_pat_persona=user_data.ape_pat_persona
+
+            ape_mat_persona=user_data.ape_mat_persona
+
+            edad=user_data.edad
+
+            fecha_extravio=user_data.fecha_extravio
+
+            curp_persona=user_data.curp_persona
+
+            sexo=user_data.sexo
+
+            email_user=user_data.email_user
+
             # user_hash
             if user_hash == '12345':
                 if action is None:

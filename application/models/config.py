@@ -1,9 +1,9 @@
 import web
 
 db_host = 'localhost'
-db_name = ''
-db_user = ''
-db_pw = ''
+db_name = 'emex'
+db_user = 'chay'
+db_pw = 'chay'
 
 db = web.database(
     dbn='mysql',

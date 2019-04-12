@@ -4,14 +4,30 @@ $def with(persona_extra)
 </h3>
 <table id="datos_tabla" class="table table-hover" cellspacing="0" width="100%">
     <thead>
-        <th>persona_extra</th>
-        <th>Edit</th>
-        <th>Delete</th>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellido Paterno</th>
+        <th>Apellido Materno</th>
+        <th>Edad</th>
+        <th>Fecha</th>
+        <th>CURP</th>
+        <th>Sexo</th>
+        <th>Email</th>
+        <th>Editar</th>
+        <th>Eliminar</th>
     </thead>
     <tbody>
         $for item in persona_extra:
         <tr>
             <td><a href='/persona_extra/view/$item.id_persona'>$item.id_persona</a></td>
+            <td><a href='/persona_extra/view/$item.id_persona'>$item.nombre_persona</a></td>
+            <td><a href='/persona_extra/view/$item.id_persona'>$item.ape_pat_persona</a></td>
+            <td><a href='/persona_extra/view/$item.id_persona'>$item.ape_mat_persona</a></td>
+            <td><a href='/persona_extra/view/$item.id_persona'>$item.edad</a></td>
+            <td><a href='/persona_extra/view/$item.id_persona'>$item.fecha_extravio</a></td>
+            <td><a href='/persona_extra/view/$item.id_persona'>$item.curp_persona</a></td>
+            <td><a href='/persona_extra/view/$item.id_persona'>$item.sexo</a></td>
+            <td><a href='/persona_extra/view/$item.id_persona'>$item.email_user</a></td>
             <td><a href='/persona_extra/edit/$item.id_persona'><span class="glyphicon glyphicon-pencil"></span></a></td>
             <td><a href='/persona_extra/delete/$item.id_persona'><span class="glyphicon glyphicon-trash"></span></a></td>
         </tr>
