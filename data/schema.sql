@@ -1,14 +1,15 @@
 CREATE TABLE `usuario` (
 	`email_user` VARCHAR(30) NOT NULL,
+	nombre_user VARCHAR(30) NOT NOT,
 	PRIMARY KEY (`email_user`)
 )
 COLLATE='latin1_swedish_ci'
 ENGINE=InnoDB
 ;
 
-
 CREATE TABLE `persona_extra` (
 	`id_persona` INT(11) NOT NULL AUTO_INCREMENT,
+	foto_persona VARCHAR(400) NOT NULL,
 	`nombre_persona` VARCHAR(40) NOT NULL,
 	`ape_pat_persona` VARCHAR(40) NOT NULL,
 	`ape_mat_persona` VARCHAR(40) NOT NULL,

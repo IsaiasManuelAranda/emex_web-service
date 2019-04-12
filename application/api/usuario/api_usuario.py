@@ -16,7 +16,7 @@ class Api_usuario:
                 web.header('Content-Type', 'application/json')
                 return json.dumps(usuario_json)
             else:
-                # http://0.0.0.0:8080/api_usuario?user_hash=12345&action=get&email_user=1
+                # http://0.0.0.0:8080/api_usuario?user_hash=12345&action=get&email_user=juan@gmail.com
                 result = config.model.get_usuario(int(email_user))
                 usuario_json = []
                 usuario_json.append(dict(result))
@@ -28,7 +28,7 @@ class Api_usuario:
             web.header('Content-Type', 'application/json')
             return json.dumps(usuario_json)
 
-# http://0.0.0.0:8080/api_usuario?user_hash=12345&action=put&email_user=1&product=nuevo&description=nueva&stock=10&purchase_price=1&price_sale=3&product_image=0
+# http://0.0.0.0:8080/api_usuario?user_hash=12345&action=put&email_user=jorge@gmail.com&nombre=Jorge
     def put(self, ):
         try:
             config.model.insert_usuario()
@@ -39,7 +39,7 @@ class Api_usuario:
             print "PUT Error {}".format(e.args)
             return None
 
-# http://0.0.0.0:8080/api_usuario?user_hash=12345&action=delete&email_user=1
+# http://0.0.0.0:8080/api_usuario?user_hash=12345&action=delete&email_user=juan@gmail.com
     def delete(self, email_user):
         try:
             config.model.delete_usuario(email_user)
@@ -50,7 +50,7 @@ class Api_usuario:
             print "DELETE Error {}".format(e.args)
             return None
 
-# http://0.0.0.0:8080/api_usuario?user_hash=12345&action=update&email_user=1&product=nuevo&description=nueva&stock=10&purchase_price=1&price_sale=3&product_image=default.jpg
+# http://0.0.0.0:8080/api_usuario?user_hash=12345&action=update&email_user=juanito@gmail.com&nombre=Juan Querendon
     def update(self, email_user, ):
         try:
             config.model.edit_usuario(email_user)
@@ -72,7 +72,8 @@ class Api_usuario:
         try:
             user_hash = user_data.user_hash  # user validation
             action = user_data.action  # action GET, PUT, DELETE, UPDATE
-            email_user=user_data.email_user
+            email_user=user_data.email_user
+
             # user_hash
             if user_hash == '12345':
                 if action is None:

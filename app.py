@@ -28,7 +28,14 @@ urls = (
     '/persona_extra/delete/(.+)', 'application.controllers.persona_extra.delete.Delete',
     '/persona_extra/insert', 'application.controllers.persona_extra.insert.Insert',
 
+    '/usuario', 'application.controllers.usuario.index.Index',
+    '/usuario/view/(.+)', 'application.controllers.usuario.view.View',
+    '/usuario/edit/(.+)', 'application.controllers.usuario.edit.Edit',
+    '/usuario/delete/(.+)', 'application.controllers.usuario.delete.Delete',
+    '/usuario/insert', 'application.controllers.usuario.insert.Insert',
+
     '/api_persona_extra/?', 'application.api.persona_extra.api_persona_extra.Api_persona_extra',
+    '/api_usuario/?', 'application.api.usuario.api_usuario.Api_usuario',
     #'/api_table_name/?', 'application.api.table_name.api_table_name.Api_table_name',
 
 )

@@ -1,0 +1,26 @@
+$def with(usuario, message)
+<h3>
+    <a href="/usuario">usuario</a>
+</h3>
+$if message != None:
+    <div class="alert alert-warning">
+        <strong>Advertencia </strong> $message
+    </div>
+<br>
+
+<form action="" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="email_user" id="email_user" value="$usuario.email_user" />
+
+    <div class="form-group">
+    <label for="nombre_user">nombre_user</label>
+    <input readonly id="nombre_user" type="text" class="form-control" name="nombre_user" size="30" value="$usuario.nombre_user"/>
+</div>
+
+    <div class="form-group">
+        <label></label>
+        <button id="send" name="send" class="form-control"><span class="glyphicon glyphicon-trash"></span> Delete</button>
+    </div>
+</form>
+<br>
+<br>
+<br>
