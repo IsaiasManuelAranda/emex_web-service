@@ -4,13 +4,15 @@ $def with(usuario)
 </h3>
 <table id="datos_tabla" class="table table-hover" cellspacing="0" width="100%">
     <thead>
-        <th>usuario</th>
+        <th>nombre</th>
+        <th>email</th>
         <th>Edit</th>
         <th>Delete</th>
     </thead>
     <tbody>
         $for item in usuario:
         <tr>
+            <td><a href='/usuario/view/$item.email_user'>$item.nombre_user</a></td>
             <td><a href='/usuario/view/$item.email_user'>$item.email_user</a></td>
             <td><a href='/usuario/edit/$item.email_user'><span class="glyphicon glyphicon-pencil"></span></a></td>
             <td><a href='/usuario/delete/$item.email_user'><span class="glyphicon glyphicon-trash"></span></a></td>

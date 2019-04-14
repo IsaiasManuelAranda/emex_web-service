@@ -34,13 +34,13 @@ def delete_persona_extra(id_persona):
 def insert_persona_extra(nombre_persona,ape_pat_persona,ape_mat_persona,edad,fecha_extravio,curp_persona,sexo,email_user):
     try:
         return db.insert('persona_extra',nombre_persona=nombre_persona,
-ape_pat_persona=ape_pat_persona,
-ape_mat_persona=ape_mat_persona,
-edad=edad,
-fecha_extravio=fecha_extravio,
-curp_persona=curp_persona,
-sexo=sexo,
-email_user=email_user)
+        ape_pat_persona=ape_pat_persona,
+        ape_mat_persona=ape_mat_persona,
+        edad=edad,
+        fecha_extravio=fecha_extravio,
+        curp_persona=curp_persona,
+        sexo=sexo,
+        email_user=email_user)
     except Exception as e:
         print "Model insert Error {}".format(e.args)
         print "Model insert Message {}".format(e.message)

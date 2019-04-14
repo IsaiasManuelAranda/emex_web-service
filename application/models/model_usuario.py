@@ -31,9 +31,10 @@ def delete_usuario(email_user):
         return None
 
 
-def insert_usuario(nombre_user):
+def insert_usuario(email_user, nombre_user):
     try:
-        return db.insert('usuario',nombre_user=nombre_user)
+        return db.insert('usuario',email_user=email_user,
+        nombre_user=nombre_user)
     except Exception as e:
         print "Model insert Error {}".format(e.args)
         print "Model insert Message {}".format(e.message)
@@ -43,7 +44,7 @@ def insert_usuario(nombre_user):
 def edit_usuario(email_user,nombre_user):
     try:
         return db.update('usuario',email_user=email_user,
-nombre_user=nombre_user,
+            nombre_user=nombre_user,
                   where='email_user=$email_user',
                   vars=locals())
     except Exception as e:
