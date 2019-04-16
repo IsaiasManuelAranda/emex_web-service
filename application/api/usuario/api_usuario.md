@@ -1,1 +1,0 @@
-'/api_usuario/?', 'application.api.usuario.api_usuario.Api_usuario',

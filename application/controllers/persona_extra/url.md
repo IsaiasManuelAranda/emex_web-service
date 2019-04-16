@@ -1,5 +1,0 @@
-'/persona_extra', 'application.controllers.persona_extra.index.Index',
-'/persona_extra/view/(.+)', 'application.controllers.persona_extra.view.View',
-'/persona_extra/edit/(.+)', 'application.controllers.persona_extra.edit.Edit',
-'/persona_extra/delete/(.+)', 'application.controllers.persona_extra.delete.Delete',
-'/persona_extra/insert', 'application.controllers.persona_extra.insert.Insert',

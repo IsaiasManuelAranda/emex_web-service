@@ -1,28 +1,17 @@
-CREATE TABLE `usuario` (
-	`email_user` VARCHAR(30) NOT NULL,
-	nombre_user VARCHAR(30) NOT NOT,
-	PRIMARY KEY (`email_user`)
-)
-COLLATE='latin1_swedish_ci'
-ENGINE=InnoDB
-;
+<--DB script-->
 
-CREATE TABLE `persona_extra` (
-	`id_persona` INT(11) NOT NULL AUTO_INCREMENT,
-	foto_persona VARCHAR(400) NOT NULL,
-	`nombre_persona` VARCHAR(40) NOT NULL,
-	`ape_pat_persona` VARCHAR(40) NOT NULL,
-	`ape_mat_persona` VARCHAR(40) NOT NULL,
-	`edad` VARCHAR(3) NOT NULL,
-	`fecha_extravio` VARCHAR(10) NOT NULL,
-	`curp_persona` VARCHAR(18) NOT NULL,
-	`sexo` VARCHAR(10) NOT NULL,
-	`email_user` VARCHAR(30) NOT NULL,
-	PRIMARY KEY (`id_persona`),
-	INDEX `email_user` (`email_user`),
-	CONSTRAINT `persona_extra_ibfk_1` FOREIGN KEY (`email_user`) REFERENCES `usuario` (`email_user`)
-)
-COLLATE='latin1_swedish_ci'
-ENGINE=InnoDB
-AUTO_INCREMENT=6
-;
+CREATE DATABASE emex;
+
+USE emex;
+
+CREATE TABLE reportes (
+    id_reporte int primary key auto_increment,
+    nombre varchar(100) NOT NULL,
+    edad int (3) NOT NULL,
+    latitud varchar(100) NOT NULL,
+    longitud varchar(100) NOT NULL
+);
+
+CREATE USER 'chay'@'localhost' IDENTIFIED BY 'chay';
+GRANT ALL PRIVILEGES ON emex.* TO 'chay'@'localhost';
+FLUSH PRIVILEGES;

@@ -1,0 +1,5 @@
+'/reportes', 'application.controllers.reportes.index.Index',
+'/reportes/view/(.+)', 'application.controllers.reportes.view.View',
+'/reportes/edit/(.+)', 'application.controllers.reportes.edit.Edit',
+'/reportes/delete/(.+)', 'application.controllers.reportes.delete.Delete',
+'/reportes/insert', 'application.controllers.reportes.insert.Insert',
