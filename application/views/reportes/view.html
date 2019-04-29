@@ -2,10 +2,46 @@ $def with(reportes)
 <h3>
     <a href="/reportes">reportes</a>
 </h3>
-nombre: $reportes.nombre <br>
-edad: $reportes.edad <br>
-latitud: $reportes.latitud <br>
-longitud: $reportes.longitud <br>
+<form name="formu" id="formu" enctype="multipart/form-data">
+    <input readonly type="text" class="form-control" name="nombre" size="30" value="$reportes.nombre"/>
+    <input readonly type="text" class="form-control" name="latitud" size="30" value="$reportes.latitud"/>
+    <input readonly type="text" class="form-control" name="longitud" size="30" value="$reportes.longitud"/>
+</form>
+<script>
+    var nombre = "";
+    var lati = "";
+    var longi = "";
+</script>
+<script>
+    var nombre = document.formu.nombre.value;
+    var lati = document.formu.latitud.value;
+    var lata = parseFloat(lati);
+    var longi = document.formu.longitud.value;
+    var longa = parseFloat(longi);
+</script>
+<script>
+    
+</script>
+<div id="googleMap" style="width:100%;height:400px;"></div>
+
+<script>
+function myMap() {
+var mapProp= {
+  center:new google.maps.LatLng(20.092315,-98.404105),
+  zoom:13,
+};
+
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+//Marcador del reporte
+var marker = new google.maps.Marker({
+          position: {lat: lata, lng: longa},
+          map:map,
+          title: "nombre"
+        });
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDejpfrW-L9df2Xl2Tz0K4InAIxO-WMP94&callback=myMap"></script>
 
 <br>
 <br>
